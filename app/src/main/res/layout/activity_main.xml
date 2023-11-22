@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_color"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="#B3FFFFFF"
+        android:text="Home"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addHike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_circle_outline_24"
+        android:contentDescription="Add Hike"
+        app:backgroundTint="#B31AFF24"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20sp"
+        app:maxImageSize="40dp"
+        android:onClick="addHike" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/refreshFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_refresh_24"
+        android:contentDescription="Refresh Users"
+        app:backgroundTint="#B3E869FF"
+        app:maxImageSize="40dp"
+        android:layout_alignParentRight="true"
+        android:onClick="Refresh" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refreshFab"
+        android:hint="Search Hikes"
+        android:padding="15dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_below="@id/searchEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/black"
+        android:onClick="searchHikes" />
+
+    <ListView
+        android:id="@+id/hikeListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchButton"
+        android:divider="#000000"
+        android:dividerHeight="3dp"
+        android:groupIndicator="@null"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"/>
+
+
+</RelativeLayout>

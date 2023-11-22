@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_color"
+    tools:context=".AddHikeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#B3FFFFFF"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="15dp"
+            android:hint="Hiking trip title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/background_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="15dp"
+            android:hint="Location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/background_button"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:background="@drawable/background_button"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is there parking?"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker"
+            tools:ignore="MissingConstraints" />
+
+        <RadioGroup
+            android:id="@+id/parkRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker">
+
+            <RadioButton
+                android:id="@+id/yesRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/noRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editTextLength"
+            android:layout_width="0dp"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Length(kilomet)"
+            android:padding="15dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parkRadioGroup" />
+
+        <EditText
+            android:id="@+id/editTextLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Level of trip"
+            android:padding="15dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLength" />
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Description"
+            android:padding="15dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLevel" />
+
+        <EditText
+            android:id="@+id/editTextPay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="numberDecimal"
+            android:hint="Amount spent on hiking trip"
+            android:padding="15dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+
+        <ImageView
+            android:id="@+id/hikeImageView"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPay" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="selectImage"
+            android:text="Select Image"
+            app:backgroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hikeImageView" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:onClick="saveHikeData"
+            android:text="Save Hike Trip"
+            app:backgroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hikeImageView" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:textSize="20dp"
+            android:text="Cancel"
+            app:backgroundTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hikeImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
